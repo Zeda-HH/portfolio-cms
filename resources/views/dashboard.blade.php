@@ -1,17 +1,28 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+@extends('layouts.app')
+@section('content')
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
+<section class="py-16">
+    <div class="max-w-5xl mx-auto px-6">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Admin Dashboard</h1>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <a href="/posts/create"
+               class="bg-blue-600 text-white rounded-2xl p-8 hover:bg-blue-700 transition text-center">
+                <div class="text-4xl mb-3">✍️</div>
+                <h3 class="text-xl font-bold">Create Post</h3>
+            </a>
+            <a href="/projects/create"
+               class="bg-indigo-600 text-white rounded-2xl p-8 hover:bg-indigo-700 transition text-center">
+                <div class="text-4xl mb-3">📊</div>
+                <h3 class="text-xl font-bold">Add Project</h3>
+            </a>
+            <a href="/messages"
+               class="bg-green-600 text-white rounded-2xl p-8 hover:bg-green-700 transition text-center">
+                <div class="text-4xl mb-3">📬</div>
+                <h3 class="text-xl font-bold">View Messages</h3>
+            </a>
         </div>
     </div>
-</x-app-layout>
+</section>
+
+@endsection
